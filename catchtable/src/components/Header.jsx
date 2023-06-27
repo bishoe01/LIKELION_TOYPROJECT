@@ -8,11 +8,11 @@ function Header() {
     return (
         <Fade>
             <div className={`${FlexRow} justify-between items-center ${PaddingX}`}>
-                <img className=' cursor-pointer' onClick={() => navigate('/ss')} src="./images/logo.png" alt="" />
-                <div className='flex gap-24'>
-                    <ul className='flex gap-12 font-extrabold'>
+                <img className='cursor-pointer w-[180px] h-[80px] object-cover ' onClick={() => navigate('/')} src="./images/logo.png" alt="" />
+                <div className='flex gap-32 text-xl'>
+                    <ul className='flex gap-24 font-extrabold'>
                         <Link to='/region'>지역별</Link>
-                        <Link to='/menuchoice'>메뉴선정</Link>
+                        <Link to='/choice'>메뉴선정</Link>
                         <Link to='/hotplace'>핫플레이스</Link>
                     </ul>
                     <ul className='flex gap-12'>
