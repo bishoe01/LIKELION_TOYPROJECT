@@ -7,7 +7,6 @@ function Category() {
         <div className={`${FlexCol} w-full h-[1000px] relative justify-center items-center ${PaddingY}`}>
             <img className='absolute top-0 -z-1 h-[1000px]' src="./images/category.png" alt="" />
             <Jump>
-
                 <div className='grid grid-cols-3 z-0 gap-8'>
                     <CategoryCard title="파티세리밀" image="choco" />
                     <CategoryCard title="파티세리밀" image="choco" />
