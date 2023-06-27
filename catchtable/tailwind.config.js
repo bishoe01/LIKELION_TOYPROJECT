@@ -6,7 +6,10 @@ module.exports = {
     extend: {
       colors: {
         primary: '#FE3F02',
-      }
+      },
+      backgroundImage: {
+        'choco': "url('/public/images/choco.jpg')",
+      },
     },
   },
   plugins: [

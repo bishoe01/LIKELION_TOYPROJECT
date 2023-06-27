@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { FlexRow, PaddingX } from '../constants/style';
-import { Fade } from 'react-reveal';
+import { Fade, Slide } from 'react-reveal';
 
 function Header() {
     const navigate = useNavigate();
     return (
-        <Fade>
+        <Slide top cascade>
             <div className={`${FlexRow} justify-between items-center ${PaddingX}`}>
                 <img className='cursor-pointer w-[180px] h-[80px] object-cover ' onClick={() => navigate('/')} src="./images/logo.png" alt="" />
                 <div className='flex gap-32 text-xl'>
@@ -21,7 +21,7 @@ function Header() {
                     </ul>
                 </div>
             </div>
-        </Fade>
+        </Slide>
     )
 }
 
