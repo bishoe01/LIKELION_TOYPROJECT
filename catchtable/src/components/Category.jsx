@@ -6,17 +6,16 @@ function Category() {
     return (
         <div className={`${FlexCol} w-full h-[1000px] relative justify-center items-center ${PaddingY}`}>
             <img className='absolute top-0 -z-1 h-[1000px]' src="./images/category.png" alt="" />
-            <Jump>
+            <Fade>
                 <div className='grid grid-cols-3 z-0 gap-8'>
-                    <CategoryCard title="파티세리밀" image="choco" />
-                    <CategoryCard title="파티세리밀" image="choco" />
-                    <CategoryCard title="파티세리밀" image="choco" />
-                    <CategoryCard title="파티세리밀" image="choco" />
-                    <CategoryCard title="파티세리밀" image="choco" />
-                    <CategoryCard title="파티세리밀" image="choco" />
+                    <CategoryCard title="파티세리밀" image="bg-choco" />
+                    <CategoryCard title="파티세리밀" image="bg-choco" />
+                    <CategoryCard title="파티세리밀" image="bg-choco" />
+                    <CategoryCard title="파티세리밀" image="bg-choco" />
+                    <CategoryCard title="파티세리밀" image="bg-choco" />
+                    <CategoryCard title="파티세리밀" image="bg-choco" />
                 </div>
-            </Jump>
-
+            </Fade>
         </div>
     )
 }
@@ -25,7 +24,7 @@ function Category() {
 function CategoryCard({ title, image }) {
     return (
         <div className='overflow-hidden rounded-2xl'>
-            <div className={`relative z-0 ${FlexCol} w-[320px] h-[300px] py-16 p-8 bg-gray-400 justify-start items-start bg-${image} bg-cover 
+            <div className={`relative z-0 ${FlexCol} ${image} w-[320px] h-[300px] py-16 p-8 bg-gray-400 justify-start items-start bg-cover 
         transition-transform duration-300 ease-in-out hover:transform hover:scale-110
         `}>
                 <div className='absolute inset-0 bg-black opacity-50' />
@@ -34,7 +33,6 @@ function CategoryCard({ title, image }) {
                 </h1>
                 <p className='mt-8 text-left text-lg font-bold text-white tracking-wide z-10'>{title}</p>
                 <span className='text-white z-10'>이제 <span class="font-bold">캐치테이블</span>에서 <span class="font-bold">예약</span>하세요</span>
-
             </div>
         </div>
     )
