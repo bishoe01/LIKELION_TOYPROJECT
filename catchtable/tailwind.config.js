@@ -9,6 +9,9 @@ module.exports = {
       },
       backgroundImage: {
         'choco': "url('/public/images/choco.jpg')",
+        'guidebook': "url('/public/images/guidebook.png')",
+        'food1': "url('/public/images/foodcard1.jpg')",
+        'food2': "url('/public/images/foodcard2.jpg')",
       },
     },
   },
