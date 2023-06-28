@@ -3,6 +3,8 @@ import Hero from '../components/Hero'
 import Banner from '../components/Banner'
 import Category from '../components/Category'
 import Guidebook from '../components/Guidebook'
+import BottomBanner from '../components/BottomBanner'
+import Footer from '../components/Footer'
 function Home() {
     return (
         <div>
@@ -10,6 +12,8 @@ function Home() {
             <Banner />
             <Category />
             <Guidebook />
+            <BottomBanner />
+            <Footer />
         </div>
     )
 }
