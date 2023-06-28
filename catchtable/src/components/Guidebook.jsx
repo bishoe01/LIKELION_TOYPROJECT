@@ -1,16 +1,21 @@
 import React from "react";
 import { FlexCol, PaddingY } from "../constants/style";
+import { Fade, Slide } from "react-reveal";
 
 export default function Guidebook() {
-  return <div className={`${FlexCol} items-center bg-guidebook h-[1400px] py-[130px] relative`}
-  >
-    <h1 className="text-white text-[48px] font-bold">
-      가이드북 선정 레스토랑
-    </h1>
-    <FoodImage food="bg-food2" position="right-20 top-80" />
-    <FoodImage food="bg-food1" position="left-20 top-80" />
-    <FoodCard />
-  </div>
+  return (
+    <Fade>
+      <div className={`${FlexCol} items-center bg-guidebook h-[1400px] py-[130px] relative`}
+      >
+        <h1 className="text-white text-[48px] font-bold">
+          가이드북 선정 레스토랑
+        </h1>
+        <FoodImage food="bg-food2" position="right-20 top-80" />
+        <FoodImage food="bg-food1" position="left-20 top-80" />
+        <FoodCard />
+      </div>
+    </Fade>
+  )
 
 }
 
@@ -31,7 +36,10 @@ function FoodCard() {
         <div className="flex items-center justify-around font-bold text-lg">
           <span>후기보기</span>
           <span>⭐️ 4.8</span>
-          <button className="px-4 py-2 bg-transparent border-4 border-white rounded-xl">예약 오픈 알림 받기</button>
+          <button
+            className="px-4 py-2 bg-transparent border-4
+            hover:bg-primary hover:border-transparent transition duration-400 ease-in-out
+           border-white rounded-xl">예약 오픈 알림 받기</button>
         </div>
       </article>
     </div>
