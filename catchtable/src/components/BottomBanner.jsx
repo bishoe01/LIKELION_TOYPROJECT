@@ -8,7 +8,7 @@ export default function BottomBanner() {
     return (
         <Fade clear>
             <div className={`${FlexCol} w-full h-[350px] bg-[#202020] justify-center items-center py-[130px] text-white text-center gap-8
-         bg-gradient-to-b from-[#202020] via-transparent to-[#636363]
+        bg-gradient-to-b from-[#202020] via-transparent to-[#636363]
         `}>
                 <h1 className='text-[32px] font-bold'>미식가들의 필수템 캐치테이블</h1>
                 <p className='text-xl w-[460px]'>
