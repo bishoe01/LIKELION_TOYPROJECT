@@ -7,7 +7,10 @@ CatchTable in Web
 ```
 npm install --legacy-peer-deps
 
-오류나면
+eslint 오류나면
 npm install eslint-config-react-app
 
+
+실행
+npm start
 ```
