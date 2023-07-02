@@ -7,7 +7,7 @@ export default function Notice() {
 
     return (
         <Fade>
-            <div className={`justify-center items-center ${FlexCol} pt-16`}>
+            <div className={`justify-center items-center ${FlexCol} pt-16 pb-[200px]`}>
                 <div className={`p-16 text-white bg-searchRealNotice center w-[88%] h-[360px] tracking-wider rounded-[12px]`}>
                     <h1 className={`text-3xl font-semibold `}>공지 사항</h1>
                     <p className={`py-4 text-lg font-bold `}>*예약 취소는 예약일로부터 3일전 가능합니다.</p>

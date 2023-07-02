@@ -5,7 +5,7 @@ import Jump from 'react-reveal/Jump';
 import { useState } from 'react'
 
 export default function Time() {
-  let data = [ "10:00","10:30", "11:00", "11:30", "12:00", "12:30"];
+  let data = [ "10:00","10:30", "11:00",];
 
   return (
     <Fade>
@@ -17,7 +17,7 @@ export default function Time() {
                 <img className={`w-6 h-4`} src='./images/filter_button.png' alt=""/>
             </button> */}
         </div>
-        <div className={`px-20 w-full ${FlexCol} justify-center items-center pb-10`}>
+        <div className={`px-20 w-full ${FlexCol} justify-center items-center pb-10 gap-2`}>
           <hr className={`border-timeBorder w-2/3`}/>
           <div 
             className={`text-white text-4xl w-2/3 height-[100px] text-center`} 
