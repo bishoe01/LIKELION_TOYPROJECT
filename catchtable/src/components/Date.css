@@ -1,0 +1,192 @@
+.react-calendar {
+    width: 80%;
+    height: 720px;
+    max-width: 100%;
+    background: transparent;
+    padding: 10px;
+    border: 1px solid #5a5a5a;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.125em;
+    color: #D9D9D9;
+    font-size:x-large;
+  }
+  
+  .react-calendar__viewContainer{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 700px;
+  }
+
+  .react-calendar--doubleView {
+    width: 720px;
+  }
+  
+  .react-calendar--doubleView .react-calendar__viewContainer {
+    display: flex;
+    margin: -0.5em;
+  }
+  
+  .react-calendar--doubleView .react-calendar__viewContainer > * {
+    width: 50%;
+    margin: 0.5em;
+  }
+  
+  
+
+  .react-calendar,
+  .react-calendar *,
+  .react-calendar *:before,
+  .react-calendar *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .react-calendar button {
+    margin: 0;
+    border: 0;
+    outline: none;
+  }
+  
+  .react-calendar button:enabled:hover {
+    cursor: pointer;
+  }
+  
+  .react-calendar__navigation {
+    display: flex;
+    height: 100px;
+    margin-bottom: 1em;
+  }
+  
+  .react-calendar__navigation button {
+    min-width: 60px;
+    height: 100px;
+    background: none;
+    font-size: 30px;
+  }
+  
+  .react-calendar__navigation button:disabled {
+    background-color: #f0f0f0;
+    
+  }
+  
+  .react-calendar__navigation button:enabled:hover,
+  .react-calendar__navigation button:enabled:focus {
+    /* background-color: #e6e6e6; */
+  }
+  
+  .react-calendar__month-view__weekdays {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75em;
+  }
+  
+  .react-calendar__month-view__weekdays__weekday {
+    padding: 0.5em;
+  }
+  
+  .react-calendar__month-view__weekNumbers .react-calendar__tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75em;
+    font-weight: bold;
+  }
+  
+  .react-calendar__month-view__days__day--weekend {
+    color: #D9D9D9;
+    width: 60px;
+  }
+  
+  .react-calendar__month-view__days__day--neighboringMonth {
+    color: #7e7e7e;
+    width: 60px;
+  }
+  
+  .react-calendar__year-view .react-calendar__tile,
+  .react-calendar__decade-view .react-calendar__tile,
+  .react-calendar__century-view .react-calendar__tile {
+    padding: 2em 0.5em;
+  }
+
+  .react-calendar__month-view__weekdays {
+    abbr {
+      font-size: 18px;
+      font-weight: 900;
+      border:none;
+    }
+  }
+
+  .react-calendar__month-view__days{
+
+  }
+  
+  .react-calendar__tile {
+    width: 20px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: none;
+    text-align: center;
+    line-height: 60px;
+  }
+  
+  .react-calendar__tile:disabled {
+    background-color: #f0f0f0;
+  }
+  
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus {
+    /* background-color: rgb(255,255,255,0.3); */
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+  }
+  
+  .react-calendar__tile--now {
+    
+  }
+  
+  .react-calendar__tile--now:enabled:hover,
+  .react-calendar__tile--now:enabled:focus {
+    /* background: #ffffa9; */
+  }
+  
+  .react-calendar__tile--hasActive {
+    background: #76baff;
+  }
+  
+  .react-calendar__tile--hasActive:enabled:hover,
+  .react-calendar__tile--hasActive:enabled:focus {
+    background: #a9d4ff;
+  }
+  
+  .react-calendar__tile--active {
+    background: #FE3F02 ;
+    opacity:0.8;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .react-calendar__tile--active:enabled:hover,
+  .react-calendar__tile--active:enabled:focus {
+    
+    background: #FE3F02;
+    opacity:0.8;
+  }
+  
+  .react-calendar--selectRange .react-calendar__tile--hover {
+    background-color: #e6e6e6;
+  }
+  

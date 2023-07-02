@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Error from './pages/Error';
 import Home from './pages/Home';
+import Filter from './pages/Filter';
 import Login from './pages/Login';
 import HotPlace from './pages/HotPlace';
 const router = createBrowserRouter([
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, path: '/', element: <Home /> },
       { path: '/table', element: <h1>product</h1> },
+      { path: '/filter', element: <Filter /> },
       { path: '/login', element: <Login /> },
       { path: '/hotplace', element: <HotPlace /> },
     ]

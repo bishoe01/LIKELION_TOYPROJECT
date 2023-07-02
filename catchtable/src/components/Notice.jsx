@@ -1,63 +1,26 @@
 import React from 'react'
-import { FlexCol } from "../constants/style";
-import {
-    AiFillBell,
-    AiOutlineHome
-} from "react-icons/ai";
-import { IoLocationOutline } from "react-icons/io5";
-import { AiOutlineClockCircle } from "react-icons/ai";
+import { FlexCol, FlexRow, PaddingY, PaddingX } from '../constants/style'
+import { Fade, Flip, Slide } from 'react-reveal'
+import Jump from 'react-reveal/Jump';
 
-import { BiPhoneCall } from "react-icons/bi";
 export default function Notice() {
+
     return (
-        <div className={`${FlexCol} w-full gap-4 px-12`}>
-            <div className='flex text-2xl justify-between bg-[#e1e2e4] p-4 my-2'>
-                <span><span className='font-bold'>이벤트, 혜택</span> 알림을 받아보세요!</span>
-                <span className='text-black font-bold flex items-center gap-2'>
-                    <AiFillBell /> 알림받기
-                </span>
-            </div>
-            <div className='flex items-center justify-start text-2xl gap-2 py-2'>
-                <IoLocationOutline />
-                <span>경기 안산시 상록구 학사2길 11-1 1층 밀플랜비</span>
-            </div>
-            <Divide />
-            <div className='flex items-center justify-start text-2xl gap-2 py-2'>
-                <AiOutlineClockCircle />
-                <span className='flex items-center justify-around gap-8'>
-                    <span className='font-bold'>
-                        영업 중
-                    </span>
-                    오전 11:00 - 오후 10:00
-                </span>
-            </div>
-            <Divide />
-            <div className='flex items-center justify-start text-2xl gap-2 py-2'>
-                <BiPhoneCall />
-                <span className='flex items-center justify-around gap-8'>
-                    <span className='font-bold'>
-                        010-5761-7061
-                    </span>
-                </span>
-            </div>
-            <Divide />
-            <div className='flex items-center justify-start text-2xl gap-2 py-2'>
-                <AiOutlineHome />
-                <span className='flex items-center justify-around gap-8 text-blue-500'>
-                    <span className='font-bold'>
-                        http://www.wavecompany.co.kr/
-                    </span>
-                </span>
-            </div>
-            <Divide />
+        <Fade>
+            <div className={`justify-center items-center ${FlexCol} pt-16`}>
+                <div className={`p-16 text-white bg-searchRealNotice center w-[88%] h-[360px] tracking-wider rounded-[12px]`}>
+                    <h1 className={`text-3xl font-semibold `}>공지 사항</h1>
+                    <p className={`py-4 text-lg font-bold `}>*예약 취소는 예약일로부터 3일전 가능합니다.</p>
+                    <ul>
+                        <li className={`p-0.5`}>· 예약 확정 후에는 문구 수정이 어렵습니다.</li>
+                        <li className={`p-0.5`}>· 픽업 시간 이전에 오시는 경우, 순차 제작으로 메뉴 픽업이 어려우신 점 참고 부탁드립니다.</li>
+                        <li className={`p-0.5`}>· 영업 시간 이후에 방문하시는 경우 근처 픽업 및 매장 앞 픽업이 불가합니다.</li>
+                        <li className={`p-0.5`}>· 퀵 이용하시는 경우 다마스퀵 보내주셔야 하며 퀵 이용중 제품 파손에 대한 책임은 없습니다.</li>
+                        <li className={`p-0.5`}>· 당장 픽업이 불가하신 경우 제품 보관이 1일 연장됩니다.</li>
+                    </ul>
+                </div>
 
-
-        </div>
-    )
-}
-
-function Divide() {
-    return (
-        <div className='w-full bg-[#e1e2e4] h-[2px] my-2' />
+            </div>
+        </Fade>
     )
 }
