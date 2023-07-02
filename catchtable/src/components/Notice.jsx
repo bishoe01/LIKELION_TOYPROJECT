@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlexCol, FlexRow, PaddingY, PaddingX} from '../constants/style'
+import { FlexCol, FlexRow, PaddingY, PaddingX } from '../constants/style'
 import { Fade, Flip, Slide } from 'react-reveal'
 import Jump from 'react-reveal/Jump';
 
@@ -19,8 +19,8 @@ export default function Notice() {
                         <li className={`p-0.5`}>· 당장 픽업이 불가하신 경우 제품 보관이 1일 연장됩니다.</li>
                     </ul>
                 </div>
-               
+
             </div>
         </Fade>
-  )
+    )
 }

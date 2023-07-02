@@ -4,6 +4,7 @@ import { FlexRow, PaddingX } from '../constants/style';
 import { Fade, Slide } from 'react-reveal';
 
 function Header() {
+    const LINK_STYLE = "hover:text-primary transition duration-200 ease-in-out"
     const navigate = useNavigate();
     return (
         <Slide top cascade>
@@ -16,8 +17,8 @@ function Header() {
                         <Link to='/hotplace'>핫플레이스</Link>
                     </ul>
                     <ul className='flex gap-12'>
-                        <Link to='/login'>로그인</Link>
-                        <Link to='/signup'>회원가입</Link>
+                        <Link className={`${LINK_STYLE} font-bold`} to='/login'>로그인</Link>
+                        <Link className={`${LINK_STYLE} font-bold`} to='/signup'>회원가입</Link>
                     </ul>
                 </div>
             </div>

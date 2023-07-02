@@ -13,11 +13,16 @@ module.exports = {
       },
       backgroundImage: {
         'choco': "url('/public/images/choco.jpg')",
+        'guidebook': "url('/public/images/guidebook.png')",
+        'food1': "url('/public/images/foodcard1.jpg')",
+        'food2': "url('/public/images/foodcard2.jpg')",
+        'login': "url('/public/images/loginImage.jpg')",
+        'planb': "url('/public/images/planb0.png')",
+        'planb1': "url('/public/images/planb1.png')",
       },
     },
   },
   plugins: [
-    require('@tailwindcss/line-clamp')
   ],
 }
 
