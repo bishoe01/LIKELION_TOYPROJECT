@@ -1,0 +1,8 @@
+{
+  "name": "Plan B",
+  "description": "브리또 핫도그 감자튀김 전문점",
+  "location": "브리또 | 안산",
+  "rating": "4.2",
+  "review": "123",
+  "price": ["5000", "8000"]
+}
