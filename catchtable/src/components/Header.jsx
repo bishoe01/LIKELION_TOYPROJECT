@@ -12,7 +12,7 @@ function Header() {
                 <div className='flex gap-32 text-xl'>
                     <ul className='flex gap-24 font-extrabold'>
                         <Link to='/region'>지역별</Link>
-                        <Link to='/choice'>메뉴선정</Link>
+                        <Link to='/filter'>식당찾기</Link>
                         <Link to='/hotplace'>핫플레이스</Link>
                     </ul>
                     <ul className='flex gap-12'>
