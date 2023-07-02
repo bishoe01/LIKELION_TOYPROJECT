@@ -7,7 +7,7 @@ export default function PlaceTabMenu() {
     const [active, setActive] = useState('공지사항');
     return (
         <div className={`${FlexCol} gap-2 justify-center items-center mt-4 w-full`}>
-            <div className={`${FlexRow} w-2/3 items-center justify-between `}>
+            <div className={`${FlexRow} w-full items-center justify-around gap-12`}>
                 {tab.map((item, index) => (
                     <button
                         onClick={() => setActive(item)}
