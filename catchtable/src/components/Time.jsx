@@ -20,9 +20,8 @@ export default function Time() {
         <div className={`px-20 w-full ${FlexCol} justify-center items-center pb-10`}>
           <hr className={`border-timeBorder w-2/3`}/>
           <div 
-            className={`text-white text-4xl w-2/3 height-[100px] 
-                      overflow-y-scroll text-center scrollbar-width: none;`} 
-            style={{ overflowY: 'auto' }}>
+            className={`text-white text-4xl w-2/3 height-[100px] text-center`} 
+            style={{ overflowY: 'hidden' }}>
             <div style={{ height: 'fit-content', maxHeight: '100%' }}>
               {data.map((time, index) => (
                 <React.Fragment key={index}>

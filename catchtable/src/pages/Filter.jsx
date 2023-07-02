@@ -21,10 +21,10 @@ export default function Filter() {
   const [people, setPeople] = useState("미설정");
 
   const getDate = (x) => {
-    setDate(x)
+    //setDate(x)
   }
   const getTime = (x) => {
-    setTime(x)
+    //setTime(x)
   }
   const getPeople = (x) => {
     setPeople(x+"명")
@@ -43,9 +43,9 @@ export default function Filter() {
   
   
   return (
-    <div className={`${FlexCol} relative z-0 `}>
+    <div className={`${FlexCol} relative z-0 bg-zinc-900`}>
         
-        <img className=' w-full absolute top-0 -z-10 my-2' src="./images/filter.png" alt=""/> 
+        {/* <img className=' w-full absolute top-0 -z-10 my-2' src="./images/filter.png" alt=""/>  */}
         <Search apiUrl={API_URL}/>
         <Date getDate={getDate}/>
         <Time getTime={getTime}/>
@@ -64,13 +64,13 @@ export default function Filter() {
           time={time}
           people={people}/>
         <Notice />
-        <div className={`my-[160px] ${FlexCol} justify-center items-center`}>
+        <div className={`my-[120px] ${FlexCol} justify-center items-center`}>
             <button 
               className='w-1/7 px-8 py-4 bg-primary 
                   rounded-full text-white font-bold tracking-wider text-thin'>
                   예약 및 결제  
             </button>
-            <p className={` py-4 tracking-wider text-white text-thin`}>예약하신 정보를 확인해주시고 다음 단계로 넘어가주세요</p>
+            <p className={` py-6 tracking-wider text-white text-thin`}>예약하신 정보를 확인해주시고 다음 단계로 넘어가주세요</p>
         </div>
     </div>
   )

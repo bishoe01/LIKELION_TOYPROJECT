@@ -25,6 +25,7 @@ export default function Search({apiUrl}) {
                     <input 
                         className='text-xl basis-[90%] rounded-l-full p-4 tracking-wider bg-white outline-none px-12 align-middle' 
                         type="text" 
+                        autoComplete="off"
                         name="search"
                         value={search}
                         onChange={onChange}
