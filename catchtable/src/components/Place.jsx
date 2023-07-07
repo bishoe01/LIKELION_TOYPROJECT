@@ -11,13 +11,13 @@ export default function Place({date, time, people}) {
         setSelectedCard(index);
     };
     const placeData = [
-        { title: "숙성도 애월점", image: "../images/place_img.png", price:"평균 28,000", detail:"교차숙성으로 유명한 제주 흑돼지 맛집 11시에 온라인 웨이팅 오픈됩니다." },
-        { title: "숙성도 애월점", image: "../images/place_img.png", price:"평균 28,000", detail:"교차숙성으로 유명한 제주 흑돼지 맛집 11시에 온라인 웨이팅 오픈됩니다." },
-        { title: "숙성도 애월점", image: "../images/place_img.png", price:"평균 28,000", detail:"교차숙성으로 유명한 제주 흑돼지 맛집 11시에 온라인 웨이팅 오픈됩니다." },
-        { title: "숙성도 애월점", image: "../images/place_img.png", price:"평균 28,000", detail:"교차숙성으로 유명한 제주 흑돼지 맛집 11시에 온라인 웨이팅 오픈됩니다." },
-        { title: "숙성도 애월점", image: "../images/place_img.png", price:"평균 28,000", detail:"교차숙성으로 유명한 제주 흑돼지 맛집 11시에 온라인 웨이팅 오픈됩니다." },
-        { title: "숙성도 애월점", image: "../images/place_img.png", price:"평균 28,000", detail:"교차숙성으로 유명한 제주 흑돼지 맛집 11시에 온라인 웨이팅 오픈됩니다." },
-        { title: "숙성도 애월점", image: "../images/place_img.png", price:"평균 28,000", detail:"교차숙성으로 유명한 제주 흑돼지 맛집 11시에 온라인 웨이팅 오픈됩니다." },
+        { title: "투파인드피터", image: "../images/place_ToFindPeter.jpg", price:"평균 18,000", detail:"다양하고 가성비 높은 파스타, 스테이크, 필라프, 음료로 유명한 레스토랑입니다."},
+        { title: "한우궁 한양대", image: "../images/place_Hanugoong.jpg", price:"평균 7,000", detail:"육개장 칼국수와 곰탕 그리고 만두로 유명한 식당입니다." },
+        { title: "이서식당", image: "../images/place_Eseo.jpg", price:"평균 13,000", detail:"삼겹살과 김치찌개 그리고 제육볶음으로 유명한 고기집입니다." },
+        { title: "유메식당", image: "../images/place_Umme.jpg", price:"평균 8,000", detail:"유라멘과 메라멘 그리고 차슈덮밥으로 유명한 일식집입니다." },
+        { title: "밀플랜비", image: "../images/place_PlanB.jpg", price:"평균 5,000", detail:"부리또와 핫도그가 가성비 좋고 맛있기로 유명합니다." },
+        { title: "포지타노", image: "../images/place_Positano.jpg", price:"평균 15,000", detail:"스테이크와 파스타가 맛있는 분위기 좋은 식당입니다." },
+        { title: "앤의 식탁", image: "../images/place_Ann.jpg", price:"평균 10,000", detail:"앤의 식탁만의 덮밥이 맛있고, 파스타 또한 맛있는 분위기 맛집입니다." },
     ];
 
   return (
@@ -72,7 +72,7 @@ function PlaceCard({title, image, detail, price,
             <div className={`${FlexCol} px-4 gap-4`}>
                 <div className={`${FlexRow} items-center`}>
                     <p className={`text-[26px]`}>{title}</p>
-                    <img className={`ps-4 h-[32px] pb-2 right-0`} src='../images/place_nextToTitle.png'/>
+                    <img className={`ps-4 h-[32px] pb-2 relative right-0`} src='../images/place_nextToTitle.png'/>
                 </div>
                 <div className={`${FlexRow} items-center`}>
                     <img src='../images/place_star.png'/>

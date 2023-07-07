@@ -143,8 +143,6 @@
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus {
     /* background-color: rgb(255,255,255,0.3); */
-    width: 60px;
-    height: 60px;
     border-radius: 100%;
   }
   
@@ -169,11 +167,8 @@
   .react-calendar__tile--active {
     background: #FE3F02 ;
     opacity:0.8;
-    width: 60px !important;
-    height: 60px !important;
     border-radius: 100%;
     color: white;
-    display: flex;
     align-items: center;
     justify-content: center;
   }

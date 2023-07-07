@@ -8,12 +8,11 @@ import './Date.css'
 import Weekdays from 'react-calendar/dist/cjs/MonthView/Weekdays';
 
 export default function Date({getDate}) {
-  const [value, onChange] = useState('2023-07-02');
+  const [value, onChange] = useState('2023-07-06');
   const handleDateChange = (date) => {
     onChange(date);
     getDate(date);
   };
-
 
   return (
     <Fade>
