@@ -11,7 +11,6 @@ export default function TabSection({ active }) {
             {active === '공지사항' && <Notice />}
             {active === '메뉴' && <Menu />}
             {active === '리뷰' && <Review />}
-            {active === '사진' && <Photos />}
             {active === '지도' &&
                 <Location lat={"37.30028202155746"} long={"126.8393026399596"} />
             }
