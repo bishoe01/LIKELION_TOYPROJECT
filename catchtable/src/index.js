@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Filter from './pages/Filter';
 import Login from './pages/Login';
 import HotPlace from './pages/HotPlace';
+import MyPage from './pages/MyPage';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: '/filter', element: <Filter /> },
       { path: '/login', element: <Login /> },
       { path: '/hotplace', element: <HotPlace /> },
+      { path: '/signup', element: <MyPage /> },
     ]
   }
 ]);

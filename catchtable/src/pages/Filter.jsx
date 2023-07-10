@@ -32,8 +32,8 @@ export default function Filter() {
     const formattedTime = `${hour}시${minute}분`;
     setTime(formattedTime);
   }
-  const getPeople = (x) => {
-    setPeople(x+"명")
+  const getPeople = (selectedPeople) => {
+    setPeople(selectedPeople+"명")
   }
   const getRequest = (x) => {
     console.log(x);
