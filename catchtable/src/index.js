@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       { path: '/filter', element: <Filter /> },
       { path: '/login', element: <Login /> },
       { path: '/hotplace', element: <HotPlace /> },
-      { path: '/signup', element: <MyPage /> },
+      { path: '/mypage', element: <MyPage /> },
     ]
   }
 ]);
