@@ -35,7 +35,7 @@ export default function Reserve() {
     };
 
     return (
-        <div className={`${FlexCol} relative z-0 bg-guidebook`}>
+        <div className={`${FlexCol} relative z-0 bg-guidebook rounded-2xl`}>
 
             <Date getDate={getDate} />
             <Time getTime={getTime} />

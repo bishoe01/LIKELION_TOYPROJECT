@@ -53,7 +53,7 @@ export default function Filter() {
 
 
   return (
-    <div className={`${FlexCol} relative z-0 bg-guidebook`}>
+    <div className={`${FlexCol} relative z-0 bg-guidebook rounded-2xl`}>
 
       <Search
         apiUrl={API_URL}
