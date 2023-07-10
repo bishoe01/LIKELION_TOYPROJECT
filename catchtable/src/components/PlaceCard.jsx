@@ -1,9 +1,32 @@
 import React from 'react'
 import { FlexCol, FlexRow, PaddingY, PaddingX} from '../constants/style'
+import { ImStarFull, ImStarHalf, ImStarEmpty } from 'react-icons/im';
 
-export default function PlaceCard({title, image, detail, price, review, index, selectedCard, handleCardClick}){
+export default function PlaceCard({title, image, detail, price, review, star, index, selectedCard, handleCardClick}){
     const isSelected = selectedCard === index;
+    const renderStars = (numStars) => {
+        const stars = [];
+        const fullStars = Math.floor(numStars);
+        const hasHalfStar = numStars % 1 !== 0;
+        console.log(numStars);
+        console.log(fullStars);
+        console.log(hasHalfStar);
     
+        for (let i = 0; i<fullStars; i++) {
+          stars.push(<ImStarFull key={`full_${i}`} />);
+        }
+      
+        if (hasHalfStar) {
+          stars.push(<ImStarHalf key={`half`} />);
+        }
+      
+        const emptyStars = 5 - stars.length;
+        for (let i = 0; i < emptyStars; i++) {
+          stars.push(<ImStarEmpty key={`empty_${i}`} />);
+        }
+      
+        return stars;
+    }; 
 
     return (
         <div className={`${FlexCol} text-white text-xl rounded-[20px] 
@@ -19,7 +42,7 @@ export default function PlaceCard({title, image, detail, price, review, index, s
                         src='../images/place_nextToTitle.png'/>
                 </div>
                 <div className={`${FlexRow} items-center`}>
-                    <img src='../images/place_star.png'/>
+                    {renderStars(star)}
                     <p className={`text-base opacity-50 ps-1`}>({review})</p>
                 </div>
                 <p className={`text-base tracking-wider pt-2 min-w-fit`}>
