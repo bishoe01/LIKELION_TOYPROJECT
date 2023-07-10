@@ -6,10 +6,12 @@ import axios from 'axios';
 import { AiFillStar } from 'react-icons/ai';
 import { AiOutlineStar } from 'react-icons/ai';
 import { BsCheck } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function PlaceDescription() {
+    const navigate = useNavigate();
     const BUTTON_STYLE = "flex items-center text-xl rounded-full my-2 py-3 px-4 font-bold";
     const [placedata, setPlacedata] = useState();
     useEffect(() => {
@@ -22,6 +24,7 @@ export default function PlaceDescription() {
         return <div>Loading data...</div>;
     }
     const { name, description, location, rating, review } = placedata;
+
     return (
         <section className={`${FlexCol} text-center items-center`}>
             <article className={`${FlexCol} w-[700px] mx-auto gap-2`}>
@@ -47,6 +50,7 @@ export default function PlaceDescription() {
                     </button>
 
                     <button
+                        onClick={() => navigate(`/reserve/${name}`)}
                         className={`${BUTTON_STYLE} w-[200px] gap-2 bg-primary text-white`}
                     >
                         <div className='rounded-full bg-white p-1 -z-1'>

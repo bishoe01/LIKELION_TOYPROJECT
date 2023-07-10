@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import { FlexCol, FlexRow, PaddingY, PaddingX} from '../constants/style'
+import React, { useEffect } from 'react'
+import { FlexCol, FlexRow, PaddingY, PaddingX } from '../constants/style'
 import { Fade, Flip, Slide } from 'react-reveal'
 import Jump from 'react-reveal/Jump';
 import Search from '../components/Search';
@@ -34,15 +34,14 @@ export default function Filter() {
     setTime(formattedTime);
   };
   const getPeople = (selectedPeople) => {
-    setPeople(selectedPeople+"명")
+    setPeople(selectedPeople + "명")
   };
   const getRequest = (x) => {
-    
   };
   const getSearchedPlace = (x) => {
     setSearchedPlace(x);
   };
-  useEffect(() => {}, [searchedPlace]);
+  useEffect(() => { }, [searchedPlace]);
   // const onSubmit = () =>{
   //   axios.post(`${API_URL}/`)
   // }
@@ -51,26 +50,26 @@ export default function Filter() {
   //   setTime(getTime);
   //   setPeople(getPeople);
   // }
-  
-  
+
+
   return (
     <div className={`${FlexCol} relative z-0 bg-guidebook`}>
-        
-        <Search 
-          apiUrl={API_URL}
-          getSearchedPlace={getSearchedPlace}/>
-        <Date getDate={getDate}/>
-        <Time getTime={getTime}/>
-      
-        <People getPeople={getPeople}/>
-        <Request getRequest={getRequest}/>
-        <Place 
-          date={`${month}월 ${day}일`}
-          time={time}
-          people={people}
-          searchedPlace={searchedPlace}/>
-        <Notice />
-        {/* <div className={`my-[120px] ${FlexCol} justify-center items-center`}>
+
+      <Search
+        apiUrl={API_URL}
+        getSearchedPlace={getSearchedPlace} />
+      <Date getDate={getDate} />
+      <Time getTime={getTime} />
+
+      <People getPeople={getPeople} />
+      <Request getRequest={getRequest} />
+      <Place
+        date={`${month}월 ${day}일`}
+        time={time}
+        people={people}
+        searchedPlace={searchedPlace} />
+      <Notice />
+      {/* <div className={`my-[120px] ${FlexCol} justify-center items-center`}>
             <button 
               className='w-1/7 px-8 py-4 bg-primary 
                   rounded-full text-white font-bold tracking-wider text-thin'>

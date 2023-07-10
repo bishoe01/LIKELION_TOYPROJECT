@@ -3,7 +3,7 @@ import { FlexCol, FlexRow } from '../constants/style';
 import TabSection from './TabSection';
 
 export default function PlaceTabMenu() {
-    const [tab, setTab] = useState(['공지사항', '메뉴', '리뷰', '사진', '지도']);
+    const [tab, setTab] = useState(['공지사항', '메뉴', '리뷰', '지도']);
     const [active, setActive] = useState('공지사항');
     return (
         <div className={`${FlexCol} gap-2 justify-center items-center mt-4 w-full`}>
