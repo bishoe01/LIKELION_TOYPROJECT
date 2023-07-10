@@ -71,7 +71,7 @@ export default function MyPick() {
                   </Fade>
                 </Pulse>
             ))}
-            {!showAllPlaces && (
+            {!showAllPlaces && visiblePlaces.length >= 5 &&(
               <Fade>
                 <button
                   onClick={handleShowAllPlaces}>
