@@ -5,18 +5,28 @@ import Jump from 'react-reveal/Jump';
 import { useState } from 'react'
 import axios from 'axios';
 
-export default function Search({apiUrl}) {
+export default function Search({apiUrl, getSearchedPlace}) {
+    // const [inputs, setInputs] = useState({search: ''});
+    // const {search} = inputs;
+    // const onChange = (e) => {
+    //     const { value, name } = e.target; 
+    //     setInputs({...inputs, [name]: value }); 
+    // };
 
-    const [inputs, setInputs] = useState({search: ''});
-    const {search} = inputs;
-    const onChange = (e) => {
-        const { value, name } = e.target; 
-        setInputs({...inputs, [name]: value }); 
-        console.log(e.target);
-    };
+    // const onSubmit = () => {
+    //     getSearchedPlace(inputs);
+    // }
     // const onSubmit =() =>{
     //     axios.post(`${apiUrl}`)
     // }
+    const [search, setSearch] = useState('');
+
+    const onChange = (e) => {
+        setSearch(e.target.value);
+    };
+    const onSubmit = () => {
+        getSearchedPlace(search);
+    };
 
     return (
         <Fade>
@@ -33,8 +43,11 @@ export default function Search({apiUrl}) {
                     <button 
                         type="button" 
                         className={` bg-white rounded-r-full outline-none start-[-8px]`}
-                        >
-                        <img className={`w-4 h-4`} src='./images/filter_search.png' alt=""/>
+                        onClick={onSubmit}>
+                        <img 
+                            className={`w-4 h-4`} 
+                            src='./images/filter_search.png' 
+                            alt=""/>
                     </button>  
                 </form>
             </div>
