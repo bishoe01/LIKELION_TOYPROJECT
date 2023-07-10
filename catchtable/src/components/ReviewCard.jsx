@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FlexCol, PaddingX } from '../constants/style'
 import { CgProfile } from 'react-icons/cg'
+import axios from 'axios'
 
 export default function ReviewCard() {
     const [userReview, setUserReview] = useState([
