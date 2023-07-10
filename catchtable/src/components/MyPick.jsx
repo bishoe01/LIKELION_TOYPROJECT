@@ -42,10 +42,10 @@ export default function MyPick() {
         </button>
         <button className={`text-xl font-extrabold`}>더보기</button>
       </div>
-      <Fade>
             <div className='grid grid-cols-3 z-0 gap-8 mt-20 mb-20'>
                 {visiblePlaces.map((place, index) => (
                 <Pulse when={selectedCard === index}>
+                  <Fade>
                     <PlaceCard
                         key={index}
 
@@ -59,16 +59,18 @@ export default function MyPick() {
                         selectedCard={selectedCard}
                         handleCardClick={handleCardClick}
                         />
+                  </Fade>
                 </Pulse>
             ))}
             {!showAllPlaces && (
-              <button
-                onClick={handleShowAllPlaces}>
-                <PlaceCardMore />
-              </button>
+              <Fade>
+                <button
+                  onClick={handleShowAllPlaces}>
+                  <PlaceCardMore />
+                </button>
+              </Fade>
             )}
             </div>
-        </Fade>
     </div>
   )
 }

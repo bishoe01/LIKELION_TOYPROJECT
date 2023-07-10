@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { FlexCol, FlexRow, PaddingY, PaddingX} from '../constants/style'
 import { Fade, Flip, Slide } from 'react-reveal'
 import Jump from 'react-reveal/Jump';
@@ -20,6 +20,7 @@ export default function Filter() {
   const [day, setDay] = useState("13");
   const [time, setTime] = useState("미설정");
   const [people, setPeople] = useState("미설정");
+  const [searchedPlace, setSearchedPlace] = useState(null);
 
   const getDate = (selectedDate) => {
     const selectedMonth = selectedDate.getMonth() + 1;
@@ -31,13 +32,17 @@ export default function Filter() {
     const [hour, minute] = selectedTime.replace(/\s/g, "").split(":");
     const formattedTime = `${hour}시${minute}분`;
     setTime(formattedTime);
-  }
+  };
   const getPeople = (selectedPeople) => {
     setPeople(selectedPeople+"명")
-  }
+  };
   const getRequest = (x) => {
-    console.log(x);
-  }
+    
+  };
+  const getSearchedPlace = (x) => {
+    setSearchedPlace(x);
+  };
+  useEffect(() => {}, [searchedPlace]);
   // const onSubmit = () =>{
   //   axios.post(`${API_URL}/`)
   // }
@@ -51,7 +56,9 @@ export default function Filter() {
   return (
     <div className={`${FlexCol} relative z-0 bg-guidebook`}>
         
-        <Search apiUrl={API_URL}/>
+        <Search 
+          apiUrl={API_URL}
+          getSearchedPlace={getSearchedPlace}/>
         <Date getDate={getDate}/>
         <Time getTime={getTime}/>
       
@@ -60,7 +67,8 @@ export default function Filter() {
         <Place 
           date={`${month}월 ${day}일`}
           time={time}
-          people={people}/>
+          people={people}
+          searchedPlace={searchedPlace}/>
         <Notice />
         {/* <div className={`my-[120px] ${FlexCol} justify-center items-center`}>
             <button 

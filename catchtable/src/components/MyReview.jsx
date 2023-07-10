@@ -68,12 +68,12 @@ export default function MyReview() {
           </button>
         </div>
       </div>
-      <Fade>
         <div className={`mt-8`}>
           <div className={`grid grid-cols-${selectedBtn} mt-12 gap-8 mb-12`}>
           {visibleReviews.map((review, index) => (
             <div key={index}>
               {selectedBtn === 1 && 
+              <Fade>
               <MyReviewOne 
                   review={review.review}
                   star={review.star}
@@ -81,8 +81,10 @@ export default function MyReview() {
 
                   index={index}
                 />
+              </Fade>
               }
               {selectedBtn === 2 &&
+              <Fade>
               <MyReviewTwo
                   review={review.review}
                   star={review.star}
@@ -90,8 +92,10 @@ export default function MyReview() {
 
                   index={index}
                 />
+              </Fade>
               }
               {selectedBtn === 3 &&
+              <Fade>
               <MyReviewThree
                   review={review.review}
                   star={review.star}
@@ -99,19 +103,19 @@ export default function MyReview() {
 
                   index={index}
                 />
+              </Fade>
               }
             </div>
           ))}
           </div>
           {!showAllReviews && (
             <button
-              className={`mt-4 mb-20 rounded-[20px] w-full h-20 bg-gray-200 text-2xl font-black`}
-              onClick={handleShowAllReviews}>
+            className={`mt-4 mb-20 rounded-[20px] w-full h-20 bg-gray-200 text-2xl font-black`}
+            onClick={handleShowAllReviews}>
               모든 리뷰 보기
             </button>
           )}
         </div>
-      </Fade>
     </div>
   )
 }

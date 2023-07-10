@@ -41,6 +41,7 @@ export default function MyReservation() {
             <div className='grid grid-cols-3 z-0 gap-8 mb-20'>
                 {visiblePlaces.map((place, index) => (
                 <Pulse when={selectedCard === index}>
+                  <Fade>
                     <PlaceCard
                         key={index}
 
@@ -54,13 +55,16 @@ export default function MyReservation() {
                         selectedCard={selectedCard}
                         handleCardClick={handleCardClick}
                         />
+                  </Fade>
                 </Pulse>
             ))}
             {!showAllPlaces && (
+             <Fade>
               <button
                 onClick={handleShowAllPlaces}>
                 <PlaceCardMore />
               </button>
+            </Fade>
             )}
             </div>
         </Fade>
