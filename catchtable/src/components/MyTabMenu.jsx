@@ -7,7 +7,7 @@ import MyTabSection from './MyTabSection';
 
 export default function MyTabMenu() {
     const [tab, setTab] = useState(['회원 정보', '나의 PICK', '예약 내역', '나의 리뷰']);
-    const [active, setActive] = useState('나의 PICK');
+    const [active, setActive] = useState('예약 내역');
     return (
         <div className={`${FlexCol} gap-2 justify-center items-center w-full`}>
             <div className={`${FlexRow} w-full items-center justify-around gap-12 

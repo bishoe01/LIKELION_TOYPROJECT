@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Fade, Slide } from 'react-reveal'
 import { FlexCol, FlexRow, PaddingX } from '../constants/style'
 import { useAuthContext } from '../context/context'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export default function Login() {
     const [LoginInfo, setLoginInfo] = useState({
@@ -21,6 +22,10 @@ export default function Login() {
             alert('아이디 또는 비밀번호가 일치하지 않습니다.')
         }
     }
+    // useEffect(() => {
+    //     axios.get('https://port-0-toy-k19y2kljwq5eju.sel4.cloudtype.app/user')
+    //         .then((res) => console.log(res));
+    // }, [])
     return (
         <Fade top>
             <div className={`w-full ${FlexRow} ${PaddingX} gap-[5%]`}>
