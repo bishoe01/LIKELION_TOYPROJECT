@@ -34,6 +34,7 @@ export default function Reserve() {
     const getRequest = (x) => {
     };
 
+
     return (
         <div className={`${FlexCol} relative z-0 bg-guidebook rounded-2xl`}>
 
@@ -43,6 +44,7 @@ export default function Reserve() {
             <Request getRequest={getRequest} />
             <div className={`my-[120px] ${FlexCol} justify-center items-center`}>
                 <button
+                    onClick={() => navigate('/mypage')}
                     className='w-1/5 px-8 py-4 bg-primary  text-2xl border-8 border-gray-500
                   rounded-full text-white font-bold tracking-wider text-thin'>
                     예약 및 결제
