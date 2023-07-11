@@ -11,16 +11,11 @@ export default function MyReview() {
     setSelectedBtn(idx);
   }
   const reviewData = [
-    { review: "매장 안 분위기도 괜찮고 여러 명이 모여서 저녁 즐기기 딱이었어요!", star: "5.0", day:"하루전"},
-    { review: "요구 사항이 많았는데 직원 분이 엄청 친절하게 대해주셔서 만족스러웠어요", star: "4.7", day:"5일전"},
-    { review: "요구 사항이 많았는데 직원 분이 엄청 친절하게 대해주셔서 만족스러웠어요", star: "4.5", day:"6일전"},
-    { review: "요구 사항이 많았는데 직원 분이 엄청 친절하게 대해주셔서 만족스러웠어요", star: "4.5", day:"6일전"},
-    { review: "요구 사항이 많았는데 직원 분이 엄청 친절하게 대해주셔서 만족스러웠어요", star: "4.5", day:"6일전"},
-    { review: "요구 사항이 많았는데 직원 분이 엄청 친절하게 대해주셔서 만족스러웠어요", star: "4.5", day:"6일전"},
-    { review: "요구 사항이 많았는데 직원 분이 엄청 친절하게 대해주셔서 만족스러웠어요", star: "4.5", day:"6일전"},
-    { review: "요구 사항이 많았는데 직원 분이 엄청 친절하게 대해주셔서 만족스러웠어요", star: "4.5", day:"6일전"},
-    { review: "요구 사항이 많았는데 직원 분이 엄청 친절하게 대해주셔서 만족스러웠어요", star: "4.5", day:"6일전"},
-    { review: "요구 사항이 많았는데 직원 분이 엄청 친절하게 대해주셔서 만족스러웠어요", star: "4.5", day:"6일전"},
+    { review: "매장 안 분위기도 괜찮고 여러 명이 모여서 저녁 즐기기 딱이었어요!", star: "4.3", day:"2시간전", image:"../images/review_Jakgoep.jpg"},
+    { review: "내부가 좁긴했지만 음식이 다 맛있고 너무 분위기 있어서 좋았어요 :)", star: "4.7", day:"하루전", image:"../images/review_Positano.jpg"},
+    { review: "음식이 간이 적당하고 맛있습니다!! 치킨 스테이크 굽기도 적당하고 너무 맛있었어요", star: "4.5", day:"4일전", image:"../images/place_Positano.jpg"},
+    { review: "파스타에 들어가는 채소들이 신선합니다! 식물 인테리어도 예뻐서 자주 갈것 같아요", star: "4.0", day:"6일전", image:"../images/review_Anns.jpg"},
+    { review: "양이 없어 보이는데 막상 먹으면 엄청 배부르고 맛있어요 국물 맛집입니다 ㅠ!", star: "4.3", day:"일주일전", image:"../images/review_Umae.jpg"},
   ];
   
   const [showAllReviews, setShowAllReviews] = useState(false);
@@ -78,6 +73,7 @@ export default function MyReview() {
                   review={review.review}
                   star={review.star}
                   day={review.day}
+                  image={review.image}
 
                   index={index}
                 />
@@ -89,6 +85,7 @@ export default function MyReview() {
                   review={review.review}
                   star={review.star}
                   day={review.day}
+                  image={review.image}
 
                   index={index}
                 />
@@ -100,6 +97,7 @@ export default function MyReview() {
                   review={review.review}
                   star={review.star}
                   day={review.day}
+                  image={review.image}
 
                   index={index}
                 />
@@ -108,7 +106,7 @@ export default function MyReview() {
             </div>
           ))}
           </div>
-          {!showAllReviews && (
+          {!showAllReviews && visibleReviews.length >= getVisibleReviewCount(selectedBtn) &&(
             <button
             className={`mt-4 mb-20 rounded-[20px] w-full h-20 bg-gray-200 text-2xl font-black`}
             onClick={handleShowAllReviews}>
@@ -120,12 +118,12 @@ export default function MyReview() {
   )
 }
 
-function MyReviewOne({review, star, day}) {
+function MyReviewOne({review, star, day, image}) {
   return(
     <div className={`${FlexCol} border-b-[6px] border-gray-300 pb-8`}>
         <img 
           className={`w-[300px] h-[200px] rounded-[12px] object-cover`}
-          src='../images/place_Ann.jpg'/>
+          src={image}/>
         <div className={`${FlexRow} text-2xl font-medium mt-8`}>
           <p className={`w-[80%]`}>{review}</p>
           <div className={`${FlexRow} w-[10%] items-center`}>
@@ -140,13 +138,13 @@ function MyReviewOne({review, star, day}) {
   )
 }
 
-function MyReviewTwo({review, star, day}) {
+function MyReviewTwo({review, star, day, image}) {
   return(
     <div className={`${FlexCol} text-2xl font-medium mb-8 
                       border-b-[6px] border-gray-300 pb-4`}>
       <img 
         className={`aspect-square rounded-[12px] object-cover place-self-center`}
-        src='../images/place_Ann.jpg'/>
+        src={image}/>
       <p className={`mt-4 mx-2 mb-2`}>{review}</p>
       <div className={`${FlexRow} place-content-center items-center`}>
         <img 
@@ -159,13 +157,13 @@ function MyReviewTwo({review, star, day}) {
   )
 }
 
-function MyReviewThree({review, star, day}){
+function MyReviewThree({review, star, day, image}){
   return(
     <div className={`${FlexCol} text-2xl font-medium mb-8
                       border-b-[6px] border-gray-300 pb-4`}>
       <img 
         className={`aspect-square rounded-[12px] object-cover place-self-center`}
-        src='../images/place_Ann.jpg'/>
+        src={image}/>
       <p className={`mt-4 mb-2`}>{review}</p>
       <div className={`${FlexRow} place-content-center items-center`}>
         <img 
