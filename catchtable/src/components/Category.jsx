@@ -32,7 +32,7 @@ function CategoryCard({ title, image }) {
                     CATCH<span className="text-[52px] inline-block align-middle"> </span>TABLE
                 </h1>
                 <p className='mt-8 text-left text-lg font-bold text-white tracking-wide z-10'>{title}</p>
-                <span className='text-white z-10'>이제 <span class="font-bold">캐치테이블</span>에서 <span class="font-bold">예약</span>하세요</span>
+                <span className='text-white z-10'>이제 <span className="font-bold">캐치테이블</span>에서 <span className="font-bold">예약</span>하세요</span>
             </div>
         </div>
     )
