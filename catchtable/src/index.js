@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import HotPlace from './pages/HotPlace';
 import MyPage from './pages/MyPage';
 import Reserve from './pages/Reserve';
+import Signup from './pages/Signup';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -23,7 +24,8 @@ const router = createBrowserRouter([
       { path: '/login', element: <Login /> },
       { path: '/hotplace', element: <HotPlace /> },
       { path: '/mypage', element: <MyPage /> },
-      { path: '/reserve/:id', element: <Reserve /> }
+      { path: '/reserve/:id', element: <Reserve /> },
+      { path: '/signUp', element: <Signup /> }
     ]
   }
 ]);
