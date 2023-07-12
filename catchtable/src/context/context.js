@@ -1,8 +1,9 @@
+import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 
 
 const AuthContext = createContext();
-
+export const BASEURL = "https://port-0-toy-k19y2kljwq5eju.sel4.cloudtype.app";
 export function AuthContextProvider({ children }) {
     const [user, setUser] = useState([
         {
@@ -27,6 +28,14 @@ export function AuthContextProvider({ children }) {
         },
     ]);
 
+    useEffect(() => {
+        axios.get(`${BASEURL}/user/`)
+            .then((res) => setUser(res.data))
+            .catch((err) => {
+                console.log(err);
+            })
+
+    })
     const [isLogin, setIsLogin] = useState(false);
     const [placeData, setPlaceData] = useState([
         { title: '투파인드피터', image: "../images/place_ToFindPeter.jpg", price: "평균 18,000", review: "121", star: 4.5, detail: "다양하고 가성비 높은 파스타, 스테이크, 필라프, 음료로 유명한 레스토랑입니다.", reserve: false},
