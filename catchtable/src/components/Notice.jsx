@@ -7,7 +7,7 @@ export default function Notice() {
 
     return (
         <Fade>
-            <div className={`justify-center items-center ${FlexCol} px-12`}>
+            <div className={`justify-center items-center ${FlexCol} px-12 mb-12`}>
                 <div className={`flex flex-col justify-center p-20 text-white bg-searchRealNotice center w-full h-[330px] tracking-wider rounded-xl`}>
                     <h2 className={`py-4 text-2xl font-bold `}>*예약 취소는 예약일로부터 3일전 가능합니다.</h2>
                     <ul className='flex flex-col gap-3 text-xl'>

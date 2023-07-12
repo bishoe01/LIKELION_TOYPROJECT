@@ -7,7 +7,7 @@ import Calendar from 'react-calendar';
 import './Date.css'
 
 export default function Date({getDate}) {
-  const [value, onChange] = useState('2023-07-06');
+  const [value, onChange] = useState('2023-07-13');
   const handleDateChange = (date) => {
     onChange(date);
     getDate(date);

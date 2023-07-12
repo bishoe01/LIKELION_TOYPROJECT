@@ -35,7 +35,7 @@ export default function PlaceDescription() {
                 <div className='flex my-2 w-full items-center justify-between'>
                     <p
                         className={`${BUTTON_STYLE} bg-gray-200 text-black`} >
-                        <span className='font-bold text-xl px-2'>평균 28,000 </span> <span className='text-sm text-gray-500'>점심 저녁 동일가</span>
+                        <span className='font-bold text-xl px-2'>평균 5,500 </span> <span className='text-sm text-gray-500'>점심 저녁 동일가</span>
                     </p>
 
                     <button
