@@ -7,12 +7,12 @@ export default function Signup() {
     const navigate = useNavigate();
     const [loginInfo, setLoginInfo] = useState({
         username: '',
-        password: '',
+        password1: '',
     });
     const { user, isLogin, setIsLogin } = useAuthContext();
     const HandleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${BASEURL}/user/`, loginInfo)
+        axios.post(`${BASEURL}/rest-auth/registration/`, { ...loginInfo, "password2": loginInfo.password1 })
             .then((res) => {
                 console.log(res);
                 alert('회원가입이 완료되었습니다.');
@@ -38,9 +38,9 @@ export default function Signup() {
                         }}
                     />
                     <input className='w-[500px] h-[50px] border-2 border-gray-300 rounded-md px-4' type='password' placeholder='비밀번호'
-                        value={loginInfo.password}
+                        value={loginInfo.password1}
                         onChange={(e) => {
-                            setLoginInfo({ ...loginInfo, password: e.target.value })
+                            setLoginInfo({ ...loginInfo, password1: e.target.value })
                         }}
                     />
                     <button className='w-[500px] h-[50px] font-bold text-xl bg-orange-500 text-white rounded-md'>회원가입</button>
