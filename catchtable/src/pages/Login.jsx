@@ -4,7 +4,9 @@ import { FlexCol, FlexRow, PaddingX } from '../constants/style'
 import { useAuthContext } from '../context/context'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-
+import { BASEURL } from '../context/context'
+axios.defaults.xsrfCookieName = 'csrftoken';
+axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN';
 export default function Login() {
     const [LoginInfo, setLoginInfo] = useState({
         username: '',
@@ -12,16 +14,31 @@ export default function Login() {
     })
     const navigate = useNavigate();
     const { user, setUser, isLogin, setIsLogin } = useAuthContext();
+    // const handleLogin = (e) => {
+    //     e.preventDefault();
+    //     const userExists = user.some((item) => item.username === LoginInfo.username && item.password === LoginInfo.password);
+    //     if (userExists) {
+    //         setIsLogin(true);
+    //         navigate('/');
+    //     } else {
+    //         alert('아이디 또는 비밀번호가 일치하지 않습니다.')
+    //     }
+    // }
     const handleLogin = (e) => {
         e.preventDefault();
-        const userExists = user.some((item) => item.username === LoginInfo.username && item.password === LoginInfo.password);
-        if (userExists) {
-            setIsLogin(true);
-            navigate('/');
-        } else {
-            alert('아이디 또는 비밀번호가 일치하지 않습니다.')
-        }
+        const response = axios.post(`${BASEURL}/rest-auth/login/`, {
+            "username": LoginInfo.username,
+            "password": LoginInfo.password
+        })
+            .then((res) => {
+                console.log(res);
+                alert('로그인이 완료되었습니다.');
+                setIsLogin(true);
+                navigate('/');
+            })
+
     }
+
     return (
         <Fade top>
             <div className={`w-full ${FlexRow} ${PaddingX} gap-[5%]`}>

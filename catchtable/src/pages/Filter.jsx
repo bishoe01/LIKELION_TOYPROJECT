@@ -44,7 +44,7 @@ export default function Filter() {
   useEffect(() => { }, [searchedPlace]);
   useEffect(() => {
     axios
-      .get("https://port-0-toy-k19y2kljwq5eju.sel4.cloudtype.app/user")
+      .get("https://port-0-toy-k19y2kljwq5eju.sel4.cloudtype.app/user/")
       .then((res) => console.log(res));
   }, []);
   // const onSubmit = () =>{
