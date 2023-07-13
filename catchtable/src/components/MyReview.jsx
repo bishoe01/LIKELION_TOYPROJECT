@@ -1,18 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FlexCol, FlexRow, PaddingY, PaddingX} from '../constants/style'
 import { Fade, Flip, Slide } from 'react-reveal'
 import Jump from 'react-reveal/Jump';
 import Pulse from 'react-reveal/Pulse';
 import { useState } from 'react';
+import axios from 'axios';
 
 export default function MyReview() {
+  const [reviews, setReviews] = useState([{comment:"", score:""},{comment:"", score:""}]);
+  useEffect(() => {
+    axios
+      .get("https://port-0-toy-k19y2kljwq5eju.sel4.cloudtype.app/user/2/user_reviews")
+      .then((res) => {
+        //console.log(res);
+        const data = res.data;
+        console.log(data);
+
+        setReviews(data);
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }, []);
+
   const [selectedBtn, setSelectedBtn] = useState(1);
   const handleButtonClick = (idx) => {
     setSelectedBtn(idx);
   }
   const reviewData = [
-    { review: "매장 안 분위기도 괜찮고 여러 명이 모여서 저녁 즐기기 딱이었어요!", star: "4.3", day:"2시간전", image:"../images/review_Jakgoep.jpg"},
-    { review: "내부가 좁긴했지만 음식이 다 맛있고 너무 분위기 있어서 좋았어요 :)", star: "4.7", day:"하루전", image:"../images/review_Positano.jpg"},
+    { review: reviews[0].comment, star: reviews[0].score, day:"2시간전", image:"../images/review_Jakgoep.jpg"},
+    { review: reviews[1].comment, star: reviews[1].score, day:"하루전", image:"../images/review_Positano.jpg"},
     { review: "음식이 간이 적당하고 맛있습니다!! 치킨 스테이크 굽기도 적당하고 너무 맛있었어요", star: "4.5", day:"4일전", image:"../images/place_Positano.jpg"},
     { review: "파스타에 들어가는 채소들이 신선합니다! 식물 인테리어도 예뻐서 자주 갈것 같아요", star: "4.0", day:"6일전", image:"../images/review_Anns.jpg"},
     { review: "양이 없어 보이는데 막상 먹으면 엄청 배부르고 맛있어요 국물 맛집입니다 ㅠ!", star: "4.3", day:"일주일전", image:"../images/review_Umae.jpg"},

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FlexCol, FlexRow, PaddingY, PaddingX } from '../constants/style'
 import { Fade, Flip, Slide } from 'react-reveal'
 import Jump from 'react-reveal/Jump';
@@ -8,9 +8,26 @@ import PlaceCard from './PlaceCard';
 import PlaceCardMore from './PlaceCardMore';
 import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../context/context';
-
+import axios from 'axios';
+import Modal from 'react-modal';
 
 export default function MyReservation() {
+  const [reviews, setReviews] = useState([{},{}]);
+  useEffect(() => {
+    axios
+      .get("https://port-0-toy-k19y2kljwq5eju.sel4.cloudtype.app/user/2/user_reservations")
+      .then((res) => {
+        //console.log(res);
+        const data = res.data;
+        console.log(data);
+
+        setReviews(data);
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }, []);
+
   const movePage = useNavigate();
   const [selectedCard, setSelectedCard] = useState(null);
   const handleCardClick = (index) => {
@@ -58,6 +75,7 @@ export default function MyReservation() {
                   handleCardClick={handleCardClick}
                 />
               </Fade>
+              
             </Pulse>
           ))}
           {!showAllPlaces && visiblePlaces.length >= 5 && (
